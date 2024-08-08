@@ -1,0 +1,17 @@
+{
+    "recommendations": [
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "vivaxy.vscode-conventional-commits",
+        "clinyong.vscode-css-modules",
+        "vunguyentuan.vscode-css-variables",
+        "dsznajder.es7-react-js-snippets",
+        "bmewburn.vscode-intelephense-client",
+        "vunguyentuan.vscode-postcss",
+        "rangav.vscode-thunder-client",
+        "mtxr.sqltools",
+        "mtxr.sqltools-driver-mysql",
+        "shd101wyy.markdown-preview-enhanced",
+        "esbenp.prettier-vscode"
+    ]
+}
