@@ -44,6 +44,7 @@ While there are many files and folders in this repository, the most important on
 -   `/resources/js` - ReactJS frontend code.
 -   `/routes` - Routing definitions.
 -   `/database/migrations` - Schema definitions to be migrated to database.
+-   `/resources/views` - the blade folder directory to render the web application interface
 
 ## VS Code Extensions
 
