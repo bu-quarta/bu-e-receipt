@@ -4,7 +4,10 @@
 
 To set up and run this project, you need the following software installed on your machine:
 
--   **Laravel Herd**: Laravel tool that simplifies setting up and managing local development environments for Laravel projects. This includes - **NodeJS** - **PHP** - **Composer**  
+-   **Laravel Herd**: Laravel tool that simplifies setting up and managing local development environments for Laravel projects. This includes:
+-   **NodeJS**
+-   **PHP**
+-   **Composer**
     [Download](https://herd.laravel.com/windows)
 
 -   **MySQL Server (v8.x)**: [Download](https://dev.mysql.com/downloads/windows/installer/8.0.html)
@@ -23,7 +26,8 @@ For a step-by-step guide on installation, you can refer to this YouTube video.
 
 1. **Create a Branch:** Start by creating a new branch based from `main`.
 2. **Submit a Pull Request:** Once your changes are ready, submit a pull request to merge your branch into the `main` branch.
-3. **Protected Branches:** Note that direct changes to the `main` branch are not allowed, as it is protected.
+3. **Approval of Code Owner:** Before the pull request can be merged into the main branch, it must be approved by the designated code owner.
+4. **Protected Branch:** Note that direct changes to the `main` branch are not allowed, as it is protected.
 
 ## Tech Stack
 
