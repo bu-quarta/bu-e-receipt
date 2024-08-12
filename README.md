@@ -5,10 +5,10 @@
 To set up and run this project, you need the following software installed on your machine:
 
 -   **Laravel Herd**: Laravel tool that simplifies setting up and managing local development environments for Laravel projects. This includes:
--   **NodeJS**
--   **PHP**
--   **Composer**
-    [Download](https://herd.laravel.com/windows)
+    -    **NodeJS**
+    -   **PHP**
+    -   **Composer**  
+[Download Laravel Herd](https://herd.laravel.com/windows)
 
 -   **MySQL Server (v8.x)**: [Download](https://dev.mysql.com/downloads/windows/installer/8.0.html)
 
