@@ -53,10 +53,10 @@ Route::middleware('auth')->group(function () {
 
     // Finance Officer-specific routes
     Route::middleware(['role:e-receipt finance officer'])->group(function () {
-        Route::resource('fees', FeeController::class)
-            ->only(['index', 'store', 'update', 'destroy']);
         Route::get('/remittance/overview', [RemittanceController::class, 'overview'])->name('remittance.overview');
         Route::get('/remittance/history', [RemittanceController::class, 'history'])->name('remittance.history');
+        Route::resource('fees', FeeController::class)
+            ->only(['index', 'store', 'update', 'destroy']);
     });
 });
 
