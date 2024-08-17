@@ -23,13 +23,7 @@ export default function Welcome({ auth }: PageProps) {
         <>
             <Head title="Welcome" />
 
-            <Flex
-                pos="relative"
-                mih={100}
-                direction="column"
-                align="center"
-                justify="center"
-            >
+            <Flex pos="relative" mih={100} direction="column" align="center" justify="center">
                 <div className={classes.container}>
                     <Grid align="center" gutter={8} py={40}>
                         <Grid.Col span={{ base: 6, lg: 4 }} offset={{ lg: 4 }}>
@@ -46,34 +40,21 @@ export default function Welcome({ auth }: PageProps) {
                                         underline="never"
                                         px={12}
                                         py={8}
-                                        c="green"
+                                        c="quarta"
                                     >
                                         Dashboard
                                     </Anchor>
                                 ) : (
-                                    <>
-                                        <Anchor
-                                            component={Link}
-                                            href={route("login")}
-                                            underline="never"
-                                            px={12}
-                                            py={8}
-                                            c="green"
-                                        >
-                                            Login
-                                        </Anchor>
-
-                                        <Anchor
-                                            component={Link}
-                                            href={route("register")}
-                                            underline="never"
-                                            px={12}
-                                            py={8}
-                                            c="green"
-                                        >
-                                            Register
-                                        </Anchor>
-                                    </>
+                                    <Anchor
+                                        component={Link}
+                                        href={route("login")}
+                                        underline="never"
+                                        px={12}
+                                        py={8}
+                                        c="quarta"
+                                    >
+                                        Login
+                                    </Anchor>
                                 )}
                             </Flex>
                         </Grid.Col>
@@ -82,16 +63,19 @@ export default function Welcome({ auth }: PageProps) {
                     <div className={classes.wrapper}>
                         <Container size={700} className={classes.container}>
                             <h1 className={classes.title}>
-                                This is the{" "}
+                                This is{" "}
                                 <Text
                                     component="span"
                                     variant="gradient"
-                                    gradient={{ from: "green", to: "green.9" }}
+                                    gradient={{
+                                        from: "quarta",
+                                        to: "quarta.9",
+                                    }}
                                     inherit
                                 >
-                                    BU E-Receipt
+                                    Quarta BU E-Receipt
                                 </Text>{" "}
-                                starting source code template.
+                                source code template.
                             </h1>
 
                             <Text className={classes.description} c="dimmed">
@@ -102,8 +86,7 @@ export default function Welcome({ auth }: PageProps) {
                                 >
                                     Laravel Breeze with React
                                 </Anchor>{" "}
-                                and uses the Mantine UI Framework instead of
-                                Tailwind.
+                                and uses the Mantine UI Framework instead of Tailwind.
                             </Text>
                         </Container>
                     </div>

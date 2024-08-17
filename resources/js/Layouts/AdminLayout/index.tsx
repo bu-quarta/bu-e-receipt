@@ -3,16 +3,29 @@ import { User } from "@/types";
 import { Link } from "@inertiajs/react";
 import {
     AppShell,
+    Autocomplete,
+    Box,
     Burger,
+    Button,
+    Container,
     Flex,
     Group,
     Menu,
     rem,
+    Skeleton,
+    Stack,
     Text,
+    Title,
     UnstyledButton,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconChevronDown, IconLogout, IconUser } from "@tabler/icons-react";
+import {
+    IconChevronDown,
+    IconLogout,
+    IconPlus,
+    IconSearch,
+    IconUser,
+} from "@tabler/icons-react";
 import { PropsWithChildren } from "react";
 
 export function AdminLayout({
@@ -24,15 +37,15 @@ export function AdminLayout({
     return (
         <AppShell
             layout="alt"
-            header={{ height: 60 }}
+            // header={{ height: 60 }}
             navbar={{
-                width: 250,
+                width: 225,
                 breakpoint: "sm",
                 collapsed: { mobile: !opened },
             }}
             padding="md"
         >
-            <AppShell.Header>
+            {/* <AppShell.Header>
                 <Flex
                     h="100%"
                     px="md"
@@ -103,7 +116,7 @@ export function AdminLayout({
                         </Menu.Dropdown>
                     </Menu>
                 </Flex>
-            </AppShell.Header>
+            </AppShell.Header> */}
             <AppShell.Navbar>
                 <Burger
                     opened={opened}
@@ -113,7 +126,11 @@ export function AdminLayout({
                 />
                 <Sidebar />
             </AppShell.Navbar>
-            <AppShell.Main>{children}</AppShell.Main>
+            <AppShell.Main
+                style={{ backgroundColor: "var(--mantine-color-gray-0)" }}
+            >
+                {children}
+            </AppShell.Main>
         </AppShell>
     );
 }

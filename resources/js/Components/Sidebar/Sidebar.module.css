@@ -1,44 +1,38 @@
 .navbar {
     height: 100vh;
-    padding: var(--mantine-spacing-md);
     display: flex;
     flex-direction: column;
     background-color: var(--mantine-primary-color-filled);
 }
+
+/* .navbarHeader {
+    padding: var(--mantine-spacing-md);
+} */
 
 .navbarMain {
     flex: 1;
 }
 
 .header {
-    padding-bottom: var(--mantine-spacing-md);
-    margin-bottom: calc(var(--mantine-spacing-md) * 1.5);
-    border-bottom: rem(1px) solid var(--mantine-color-primary-7);
+    padding: var(--mantine-spacing-xl) var(--mantine-spacing-md);
 }
 
 .footer {
     padding-top: var(--mantine-spacing-md);
     margin-top: var(--mantine-spacing-md);
-    border-top: rem(1px) solid var(--mantine-color-blue-7);
-}
-
-.version {
-    background-color: var(--mantine-color-blue-7);
-    color: var(--mantine-color-white);
 }
 
 .link {
     display: flex;
     align-items: center;
     text-decoration: none;
-    font-size: var(--mantine-font-size-sm);
+    font-size: var(--mantine-font-size-xs);
     color: var(--mantine-color-white);
-    padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
-    border-radius: var(--mantine-radius-sm);
-    font-weight: 500;
+    padding: var(--mantine-spacing-md) var(--mantine-spacing-lg);
+    /* border-radius: var(--mantine-radius-sm); */
 
     @mixin hover {
-        background-color: var(--mantine-primary-color-7);
+        background-color: var(--mantine-primary-color-8);
         color: var(--mantine-color-white);
 
         .linkIcon {
@@ -49,20 +43,17 @@
     &[data-active] {
         &,
         &:hover {
-            box-shadow: var(--mantine-shadow-sm);
-            background-color: var(--mantine-color-white);
-            color: var(--mantine-primary-color-filled);
+            background-color: #061c44;
+            color: var(--mantine-color-white);
 
             .linkIcon {
-                color: var(--mantine-primary-color-filled);
+                color: var(--mantine-color-white);
             }
         }
     }
 }
 
 .linkIcon {
-    color: var(--mantine-color-blue-1);
+    color: var(--mantine-color-primary-1);
     margin-right: var(--mantine-spacing-sm);
-    width: rem(25px);
-    height: rem(25px);
 }

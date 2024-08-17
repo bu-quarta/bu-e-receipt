@@ -1,35 +1,20 @@
 import { PropsWithChildren } from "react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import { Link } from "@inertiajs/react";
-import { Flex, Paper } from "@mantine/core";
+import { Center, Flex, Paper } from "@mantine/core";
 import classes from "./GuestLayout.module.css";
 
 export default function Guest({ children }: PropsWithChildren) {
     return (
-        <Flex
-            direction="column"
-            align="center"
-            mih="100vh"
-            justify="center"
-            pt={24}
+        <Center
+            h="100vh"
             style={{
-                backgroundColor:
-                    "light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6))",
+                background: "linear-gradient(252deg, #4C9E37 0%, #113C01 100%)",
             }}
         >
-            <div>
-                <Link href="/">
-                    <ApplicationLogo
-                        height={80}
-                        width={80}
-                        className={classes.logo}
-                    />
-                </Link>
-            </div>
-
-            <Paper shadow="md" radius="md" className={classes.card}>
+            <Paper shadow="md" radius="md" py={56} px={36}>
                 {children}
             </Paper>
-        </Flex>
+        </Center>
     );
 }

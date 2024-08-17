@@ -5,11 +5,15 @@ import {
     Anchor,
     Button,
     Checkbox,
+    Divider,
     Flex,
+    Group,
+    Image,
     Stack,
     Text,
     TextInput,
 } from "@mantine/core";
+import { IconBrandGoogle, IconBrandGoogleFilled } from "@tabler/icons-react";
 
 export default function Login({
     status,
@@ -40,63 +44,51 @@ export default function Login({
         <GuestLayout>
             <Head title="Log in" />
 
-            {status && (
-                <Text c="green" mb={16} size="sm" fw={500}>
-                    {status}
-                </Text>
-            )}
-
             <form onSubmit={submit}>
-                <Stack gap={16}>
-                    <TextInput
-                        id="email"
-                        type="email"
-                        name="email"
-                        value={data.email}
-                        autoComplete="username"
-                        leftSectionPointerEvents="none"
-                        label="Email"
-                        onChange={(e) => setData("email", e.target.value)}
-                        error={errors.email}
-                    />
+                <Stack gap={32} align="center">
+                    <Group>
+                        <Image src="/images/usc-logo.png" h={62} w={88} />
+                        <Image src="/images/quarta.png" h={62} w={179} />
+                    </Group>
+                    <div>
+                        <Text fw={400} c="#226012" size="xl" ta="center" tt="uppercase">
+                            Welcome to
+                        </Text>
 
-                    <TextInput
-                        id="password"
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        autoComplete="current-password"
-                        leftSectionPointerEvents="none"
-                        label="Password"
-                        onChange={(e) => setData("password", e.target.value)}
-                        error={errors.password}
-                    />
+                        <Text fw={700} c="#226012" fz={24} tt="uppercase" ta="center">
+                            BU E-Receipt System
+                        </Text>
+                    </div>
 
-                    <Flex align="center">
-                        <Checkbox
-                            name="remember"
-                            checked={data.remember}
-                            onChange={(e) =>
-                                setData("remember", e.target.checked)
-                            }
-                            label="Remember me"
-                        />
-                    </Flex>
+                    <Button
+                        leftSection={<IconBrandGoogleFilled size={20} />}
+                        component="a"
+                        color="#226012"
+                        href={route("google-auth")}
+                        size="md"
+                        px={24}
+                        h={56}
+                        fullWidth
+                        fw={400}
+                    >
+                        LOGIN WITH BU EMAIL
+                    </Button>
 
-                    <Flex align="center" justify="end">
-                        {canResetPassword && (
-                            <Anchor
-                                component={Link}
-                                href={route("password.request")}
-                                size="sm"
-                            >
-                                Forgot your password?
-                            </Anchor>
-                        )}
-                        <Button ml={16} type="submit" loading={processing}>
-                            Log in
-                        </Button>
-                    </Flex>
+                    <Stack align="center" gap={4}>
+                        <Text fw={500} size="md" ta="center">
+                            New to BU E-Receipt System?
+                        </Text>
+
+                        <Anchor
+                            component={Link}
+                            href="/org-registration"
+                            fw={500}
+                            size="md"
+                            underline="always"
+                        >
+                            Register my Organization
+                        </Anchor>
+                    </Stack>
                 </Stack>
             </form>
         </GuestLayout>
