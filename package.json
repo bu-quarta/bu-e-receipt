@@ -1,4 +1,5 @@
 {
+    "name": "bu-e-receipt",
     "private": true,
     "type": "module",
     "scripts": {
@@ -23,5 +24,9 @@
         "react-dom": "^18.2.0",
         "typescript": "^5.0.2",
         "vite": "^5.0"
+    },
+    "dependencies": {
+        "@mantine/charts": "^7.11.2",
+        "recharts": "^2.12.7"
     }
 }
