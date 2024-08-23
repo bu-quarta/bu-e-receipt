@@ -1,5 +1,5 @@
-import { HeaderMenu } from "@/Components/HeaderMenu";
+import { HeaderMenu } from "@/Components/HeaderMegaMenu";
 
 export default function Dashboard() {
-    <HeaderMenu />
+    <HeaderMenu />;
 }

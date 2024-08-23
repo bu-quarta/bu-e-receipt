@@ -2,7 +2,6 @@ import { Link, Head } from "@inertiajs/react";
 import { PageProps } from "@/types";
 import {
     Accordion,
-    Anchor,
     Box,
     Button,
     Card,
@@ -13,15 +12,11 @@ import {
     Group,
     Image,
     SimpleGrid,
-    Skeleton,
     Space,
     Stack,
     Text,
-    Title,
 } from "@mantine/core";
-import ApplicationLogo from "@/Components/ApplicationLogo";
-import classes from "./Welcome.module.css";
-import { HeaderMenu } from "@/Components/HeaderMenu";
+import { HeaderMegaMenu } from "@/Components/HeaderMegaMenu";
 import { BadgeCard } from "@/Components/BadgeCard";
 import { ContactUs } from "@/Components/ContactUs";
 import { FooterSocial } from "@/Components/FooterSocial";
@@ -61,24 +56,24 @@ const faq = [
     },
 ];
 
-const faqItems = faq.map((item) => (
-    <Accordion.Item key={item.value} value={item.value}>
-        <Accordion.Control>{item.value}</Accordion.Control>
-        <Accordion.Panel>{item.description}</Accordion.Panel>
-    </Accordion.Item>
-));
-
 export default function Welcome({ auth }: PageProps) {
+    const faqItems = faq.map((item) => (
+        <Accordion.Item key={item.value} value={item.value}>
+            <Accordion.Control>{item.value}</Accordion.Control>
+            <Accordion.Panel>{item.description}</Accordion.Panel>
+        </Accordion.Item>
+    ));
     return (
         <>
             <Head title="Quarta" />
 
-            <HeaderMenu auth={auth} />
+            <HeaderMegaMenu auth={auth} />
 
-            <div>
+            <Box>
                 <Image fit="contain" src="/images/USC RECIEPT SYSTEM 1 1.svg" />
-                <Container pt={30} pb={30}>
-                    <SimpleGrid cols={2} h={270} spacing={{ base: "xl" }}>
+
+                <Container py={30}>
+                    <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={{ base: "xl" }}>
                         <div>
                             <Image
                                 radius={"md"}
@@ -143,7 +138,7 @@ export default function Welcome({ auth }: PageProps) {
 
                 <Box bg="#399A35">
                     <Container pt={30} pb={30} c="#FFF">
-                        <SimpleGrid cols={2} h={270} spacing={{ base: "xl" }}>
+                        <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={{ base: "xl" }}>
                             <div>
                                 <Stack
                                     h={"100%"}
@@ -210,7 +205,7 @@ export default function Welcome({ auth }: PageProps) {
 
                     <Space h="xl"></Space>
 
-                    <Container pr={100} pl={100}>
+                    <Container px={{ base: 25, md: 100 }}>
                         <SimpleGrid
                             type="container"
                             cols={{ base: 1, "300px": 2, "600px": 3 }}
@@ -350,7 +345,7 @@ export default function Welcome({ auth }: PageProps) {
                             </Center>
 
                             <SimpleGrid
-                                px={100}
+                                px={{ base: 25, md: 100 }}
                                 py={30}
                                 cols={{ base: 1, sm: 2 }}
                                 spacing={{ base: 10, sm: "xl" }}
@@ -457,7 +452,7 @@ export default function Welcome({ auth }: PageProps) {
 
                     <Space h="xl"></Space>
 
-                    <Container pr={100} pl={100}>
+                    <Container px={{ base: 25, md: 100 }}>
                         <SimpleGrid
                             type="container"
                             cols={{ base: 1, "300px": 2, "600px": 3 }}
@@ -493,7 +488,7 @@ export default function Welcome({ auth }: PageProps) {
 
                 <Space h="xl"></Space>
 
-                <Container p={-5}>
+                <Container p={-5} id="contact-us">
                     <ContactUs />
                 </Container>
 
@@ -502,77 +497,7 @@ export default function Welcome({ auth }: PageProps) {
                 <Container fluid bg={"#404040"}>
                     <FooterSocial></FooterSocial>
                 </Container>
-            </div>
-
-            {/* <Flex pos="relative" mih={100} direction="column" align="center" justify="center">
-                <div className={classes.container}>
-                    <Grid align="center" gutter={8} py={40}>
-                        <Grid.Col span={{ base: 6, lg: 4 }} offset={{ lg: 4 }}>
-                            <Flex justify={{ lg: "center" }}>
-                                <ApplicationLogo className={classes.logo} />
-                            </Flex>
-                        </Grid.Col>
-                        <Grid.Col span={{ base: 6, lg: 4 }}>
-                            <Flex justify="end" flex={1} mx={-12}>
-                                {auth.user ? (
-                                    <Anchor
-                                        component={Link}
-                                        href={route("dashboard")}
-                                        underline="never"
-                                        px={12}
-                                        py={8}
-                                        c="quarta"
-                                    >
-                                        Dashboard
-                                    </Anchor>
-                                ) : (
-                                    <Anchor
-                                        component={Link}
-                                        href={route("login")}
-                                        underline="never"
-                                        px={12}
-                                        py={8}
-                                        c="quarta"
-                                    >
-                                        Login
-                                    </Anchor>
-                                )}
-                            </Flex>
-                        </Grid.Col>
-                    </Grid>
-
-                    <div className={classes.wrapper}>
-                        <Container size={700} className={classes.container}>
-                            <h1 className={classes.title}>
-                                This is{" "}
-                                <Text
-                                    component="span"
-                                    variant="gradient"
-                                    gradient={{
-                                        from: "quarta",
-                                        to: "quarta.9",
-                                    }}
-                                    inherit
-                                >
-                                    Quarta BU E-Receipt
-                                </Text>{" "}
-                                source code template.
-                            </h1>
-
-                            <Text className={classes.description} c="dimmed">
-                                It is based on{" "}
-                                <Anchor
-                                    className={classes.description}
-                                    href="https://laravel.com/docs/11.x/starter-kits#breeze-and-inertia"
-                                >
-                                    Laravel Breeze with React
-                                </Anchor>{" "}
-                                and uses the Mantine UI Framework instead of Tailwind.
-                            </Text>
-                        </Container>
-                    </div>
-                </div>
-            </Flex> */}
+            </Box>
         </>
     );
 }
