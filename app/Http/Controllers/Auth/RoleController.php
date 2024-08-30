@@ -21,7 +21,7 @@ class RoleController extends Controller
 
         // Validate the selected role
         $request->validate([
-            'role' => 'required|in:e-receipt auditor,e-receipt finance officer,e-receipt admin'
+            'role' => 'required|in:e-receipt auditor,e-receipt finance officer,e-receipt admin,quarta admin'
         ]);
 
         // Remove previous roles (if any) and assign the new role
@@ -36,6 +36,8 @@ class RoleController extends Controller
                 return redirect('dashboard');
             case 'e-receipt admin':
                 return redirect('dashboard');
+            case 'quarta admin':
+                return redirect('quarta/dashboard');
         }
     }
 }

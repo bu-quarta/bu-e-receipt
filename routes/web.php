@@ -5,6 +5,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FeeController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QuartaDashboardController;
+use App\Http\Controllers\QuartaOrganizationsController;
 use App\Http\Controllers\RemittanceController;
 use App\Http\Controllers\TransactionsController;
 use Illuminate\Foundation\Application;
@@ -57,6 +59,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/remittance/history', [RemittanceController::class, 'history'])->name('remittance.history');
         Route::resource('fees', FeeController::class)
             ->only(['index', 'store', 'update', 'destroy']);
+    });
+
+    // Quarta dev
+    Route::middleware(['role:quarta admin'])->group(function () {
+        Route::get('/quarta/dashboard', [QuartaDashboardController::class, 'index'])->name('quarta.dashboard');
+        Route::get('/quarta/organizations', [QuartaOrganizationsController::class, 'index'])->name('quarta.organizations');
     });
 });
 

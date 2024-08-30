@@ -12,5 +12,6 @@ class RolesAndPermissionsSeeder extends Seeder
         Role::create(['name' => 'e-receipt admin']);
         Role::create(['name' => 'e-receipt finance officer']);
         Role::create(['name' => 'e-receipt auditor']);
+        Role::create(['name' => 'quarta admin']);
     }
 }

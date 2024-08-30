@@ -73,6 +73,18 @@ const SelectRole: React.FC<PageProps> = ({ auth }) => {
                             </ActionIcon>
                             <Text c="white">Auditor</Text>
                         </Stack>
+
+                        <Stack align="center">
+                            <ActionIcon
+                                onClick={() => handleRoleClick("quarta admin")}
+                                size={170}
+                                variant="filled"
+                                color="#C0C000"
+                            >
+                                <IconUserFilled size={96} />
+                            </ActionIcon>
+                            <Text c="white">Quarta Admin</Text>
+                        </Stack>
                     </Group>
                 </div>
             </Stack>
