@@ -191,44 +191,6 @@ export default function Welcome({ auth }: PageProps) {
 
                 <Space h="xl"></Space>
 
-                <Box>
-                    <Center>
-                        <Stack gap={0} align="stretch" justify="center">
-                            <Text fw={600} size="xl" c="#000">
-                                OFFICIAL DIRECTORY
-                            </Text>
-                            <Text ta="center" fw={500} size="xs" c="#226012">
-                                QUARTA BU 2024-2025
-                            </Text>
-                        </Stack>
-                    </Center>
-
-                    <Space h="xl"></Space>
-
-                    <Container px={{ base: 25, md: 100 }}>
-                        <SimpleGrid
-                            type="container"
-                            cols={{ base: 1, "300px": 2, "600px": 3 }}
-                            spacing={{ base: 5, "300px": "md" }}
-                        >
-                            <BadgeCard data={mockdata} />
-                            <BadgeCard data={mockdata} />
-                            <BadgeCard data={mockdata} />
-                            <BadgeCard data={mockdata} />
-                            <BadgeCard data={mockdata} />
-                            <BadgeCard data={mockdata} />
-                            <BadgeCard data={mockdata} />
-                            <BadgeCard data={mockdata} />
-                            <BadgeCard data={mockdata} />
-                            <BadgeCard data={mockdata} />
-                            <BadgeCard data={mockdata} />
-                            <BadgeCard data={mockdata} />
-                        </SimpleGrid>
-                    </Container>
-                </Box>
-
-                <Space h="xl"></Space>
-
                 <Container>
                     <Stack gap={0} bd="3px solid #226012" style={{ borderRadius: 5 }}>
                         <Text bg="#226012" c="#FFFFFF" px={50} py={20} fw={700}>

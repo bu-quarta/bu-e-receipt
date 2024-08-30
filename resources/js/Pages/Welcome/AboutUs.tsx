@@ -1,7 +1,25 @@
+import { BadgeCard } from "@/Components/BadgeCard";
 import { HeaderMegaMenu } from "@/Components/HeaderMegaMenu";
 import { PageProps } from "@/types";
 import { Head } from "@inertiajs/react";
-import { Container, Grid, Image, Space, Text } from "@mantine/core";
+import {
+    Center,
+    Container,
+    Grid,
+    Image,
+    Paper,
+    SimpleGrid,
+    Space,
+    Stack,
+    Text,
+} from "@mantine/core";
+
+const mockdata = {
+    image: "https://images.unsplash.com/photo-1437719417032-8595fd9e9dc6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
+    name: "JORENE JASON DE VERA",
+    title: "Chairman",
+    description: "BS Agriculture Major in Agricultural Extension, BU Guinobatan",
+};
 
 export default function AboutUs({ auth }: PageProps) {
     return (
@@ -13,7 +31,6 @@ export default function AboutUs({ auth }: PageProps) {
                     <Grid.Col
                         span={2}
                         bg={"linear-gradient(180deg, #4C9E37 30%, #1B3813 100%)"}
-                        h={`calc(100vh - 80px)`}
                     ></Grid.Col>
                     <Grid.Col span={"auto"}>
                         <Container py={25} fw={600}>
@@ -55,6 +72,42 @@ export default function AboutUs({ auth }: PageProps) {
                                 </Grid.Col>
                             </Grid>
                         </Container>
+
+                        <Paper>
+                            <Center>
+                                <Stack gap={0} align="stretch" justify="center">
+                                    <Text fw={600} size="xl" c="#000">
+                                        OFFICIAL DIRECTORY
+                                    </Text>
+                                    <Text ta="center" fw={500} size="xs" c="#226012">
+                                        QUARTA BU 2024-2025
+                                    </Text>
+                                </Stack>
+                            </Center>
+
+                            <Space h="xl"></Space>
+
+                            <Container px={25}>
+                                <SimpleGrid
+                                    type="container"
+                                    cols={{ base: 1, "300px": 2, "500px": 3 }}
+                                    spacing={{ base: 5, "300px": "md" }}
+                                >
+                                    <BadgeCard data={mockdata} />
+                                    <BadgeCard data={mockdata} />
+                                    <BadgeCard data={mockdata} />
+                                    <BadgeCard data={mockdata} />
+                                    <BadgeCard data={mockdata} />
+                                    <BadgeCard data={mockdata} />
+                                    <BadgeCard data={mockdata} />
+                                    <BadgeCard data={mockdata} />
+                                    <BadgeCard data={mockdata} />
+                                    <BadgeCard data={mockdata} />
+                                    <BadgeCard data={mockdata} />
+                                    <BadgeCard data={mockdata} />
+                                </SimpleGrid>
+                            </Container>
+                        </Paper>
                     </Grid.Col>
                 </Grid>
             </Container>
