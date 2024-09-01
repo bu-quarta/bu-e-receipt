@@ -7,6 +7,7 @@ import {
     IconSwitchHorizontal,
     IconLogout,
     IconLayoutGrid,
+    IconUsersGroup,
 } from "@tabler/icons-react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import classes from "./Sidebar.module.css";
@@ -19,11 +20,7 @@ const data = [
         label: "Dashboard",
         icon: IconLayoutGrid,
         href: "/dashboard",
-        roles: [
-            "e-receipt admin",
-            "e-receipt finance officer",
-            "e-receipt auditor",
-        ],
+        roles: ["e-receipt admin", "e-receipt finance officer", "e-receipt auditor"],
     },
     {
         link: "transactions.pending",
@@ -67,14 +64,26 @@ const data = [
         href: "/remittance/history",
         roles: ["e-receipt finance officer"],
     },
+    {
+        link: "quarta.dashboard",
+        label: "Dashboard",
+        icon: IconLayoutGrid,
+        href: "/quarta/dashboard",
+        roles: ["quarta admin"],
+    },
+    {
+        link: "quarta.organization",
+        label: "Organizations",
+        icon: IconUsersGroup,
+        href: "/quarta/organizations",
+        roles: ["quarta admin"],
+    },
 ];
 
 export function Sidebar() {
     const { roles } = usePage<PageProps>().props;
 
-    const filteredData = data.filter((item) =>
-        item.roles.some((role) => roles.includes(role))
-    );
+    const filteredData = data.filter((item) => item.roles.some((role) => roles.includes(role)));
 
     const links = filteredData.map((item) => (
         <Link
@@ -101,17 +110,8 @@ export function Sidebar() {
             <div className={classes.navbarMain}>{links}</div>
 
             <div className={classes.footer}>
-                <Anchor
-                    unstyled
-                    component={Link}
-                    href="/role-selection"
-                    className={classes.link}
-                >
-                    <IconSwitchHorizontal
-                        className={classes.linkIcon}
-                        stroke={1.5}
-                        size={20}
-                    />
+                <Anchor unstyled component={Link} href="/role-selection" className={classes.link}>
+                    <IconSwitchHorizontal className={classes.linkIcon} stroke={1.5} size={20} />
                     <span>Change role</span>
                 </Anchor>
 
@@ -123,11 +123,7 @@ export function Sidebar() {
                     href={route("logout")}
                     className={classes.link}
                 >
-                    <IconLogout
-                        className={classes.linkIcon}
-                        stroke={1.5}
-                        size={20}
-                    />
+                    <IconLogout className={classes.linkIcon} stroke={1.5} size={20} />
                     <span>Logout</span>
                 </UnstyledButton>
             </div>
