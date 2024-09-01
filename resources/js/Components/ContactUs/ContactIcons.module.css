@@ -1,0 +1,10 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    color: #404040;
+}
+
+.icon {
+    margin-right: var(--mantine-spacing-md);
+    background-color: transparent;
+}

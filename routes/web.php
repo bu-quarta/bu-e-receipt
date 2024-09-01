@@ -15,10 +15,20 @@ Route::get('/', function () {
     return Inertia::render('Welcome/index', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
+        'privacyPolicy' => Route::has('privacy.policy'),
+        'aboutUs' => Route::has('about.us'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+Route::get('/about-us', function () {
+    return Inertia::render('Welcome/AboutUs');
+})->name('about.us');
+
+Route::get('/privacy-policy', function () {
+    return Inertia::render('Welcome/PrivacyPolicy');
+})->name('privacy.policy');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
